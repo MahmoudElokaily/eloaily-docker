@@ -1,7 +1,8 @@
+const express = require('express')
 const mongoose = require('mongoose');
 const { createClient } = require("redis");
-const { Client } = require('pg')
-const url = require("node:url");
+// const { Client } = require('pg')
+// const url = require("node:url");
 
 
 const port = process.env.PORT || 4000;
