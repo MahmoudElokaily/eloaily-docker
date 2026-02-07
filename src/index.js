@@ -8,6 +8,9 @@ const { createClient } = require("redis");
 const port = process.env.PORT || 4000;
 const app = express();
 
+app.set('trust proxy', true);
+
+
 // connect to redis
 const REDIS_PORT = 6379;
 const REDIS_HOST = 'redis';
@@ -54,6 +57,7 @@ mongoose.connect(URL)
 
 app.get('/', (req, res) => {
     redisClient.set('product', 'iphone 16');
+    console.log("test");
     res.send('<h1>Hello Test From AWS using docker hub</h1>');
 });
 app.get('/data',async (req, res) => {
